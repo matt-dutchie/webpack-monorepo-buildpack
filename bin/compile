@@ -17,10 +17,6 @@ APP_BASE="$(cat "${ENV_DIR}/APP_BASE")"
 (
     rm "${BUILD_DIR}/${APP_BASE}/imports/shared" &&
     mv "${BUILD_DIR}/shared/imports" "${BUILD_DIR}/${APP_BASE}/imports/shared" &&
-    rm "${BUILD_DIR}/${APP_BASE}/consumer-imports" &&
-    mv "${BUILD_DIR}/consumer/imports" "${BUILD_DIR}/${APP_BASE}/consumer-imports" &&
-    rm "${BUILD_DIR}/${APP_BASE}/consumer-public" &&
-    mv "${BUILD_DIR}/consumer/public" "${BUILD_DIR}/${APP_BASE}/consumer-public" &&
     mv "${BUILD_DIR}/${APP_BASE}" "${STAGE}" &&
     rm -rf "${BUILD_DIR}" &&
     mv "${STAGE}/$(basename "$APP_BASE")" "${BUILD_DIR}"
